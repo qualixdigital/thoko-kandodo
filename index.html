@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thoko Kandodo | Executive Coach & Strategist</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #D64A4A;
+            --secondary: #F9E0E0;
+            --accent: #D4A5C3;
+            --dark: #5D4E6D;
+            --light: #FFF9FB;
+            --text: #333333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+        
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--primary);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+        
+        section {
+            padding: 4rem 0;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease;
+        }
+        
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            animation: slideDown 0.8s ease;
+        }
+        
+        @keyframes slideDown {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav li {
+            margin-left: 1.5rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        nav a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: width 0.3s ease;
+        }
+        
+        nav a:hover:after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(93, 78, 109, 0.85), rgba(214, 74, 74, 0.85)), url('https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 10rem 0 5rem;
+            margin-top: 60px;
+            animation: fadeIn 1.2s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: white;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+        
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0; 
+                transform: translateY(30px);
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0);
+            }
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            animation: fadeInUp 1s ease 0.5s both;
+        }
+        
+        .tagline {
+            background-color: rgba(255, 255, 255, 0.2);
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            border-radius: 30px;
+            margin-top: 1rem;
+            font-weight: 500;
+            animation: fadeInUp 1s ease 0.7s both;
+        }
+        
+        /* About Section */
+        .about {
+            background-color: white;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.5s ease;
+        }
+        
+        .about-image:hover {
+            transform: scale(1.03);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Impact Section */
+        .impact {
+            background-color: var(--secondary);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .stat-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-desc {
+            font-size: 0.9rem;
+            color: var(--dark);
+        }
+        
+        /* Services Section */
+        .services {
+            background-color: white;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--primary);
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .service-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        /* Focus Areas */
+        .focus {
+            background-color: var(--secondary);
+        }
+        
+        .focus-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .focus-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: transform 0.3s ease;
+            opacity: 0;
+            transform: translateX(-20px);
+        }
+        
+        .focus-item.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .focus-item:nth-child(even) {
+            transform: translateX(20px);
+        }
+        
+        .focus-item:nth-child(even).visible {
+            transform: translateX(0);
+        }
+        
+        .focus-item:hover {
+            transform: translateY(-3px);
+        }
+        
+        .focus-icon {
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+        
+        /* Certifications */
+        .certifications {
+            background-color: white;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--primary);
+            transform: translateX(-50%);
+        }
+        
+        .timeline-item {
+            margin-bottom: 2rem;
+            position: relative;
+            width: 50%;
+            padding-right: 3rem;
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: all 0.6s ease;
+        }
+        
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .timeline-item:nth-child(even) {
+            margin-left: 50%;
+            padding-right: 0;
+            padding-left: 3rem;
+            transform: translateX(20px);
+        }
+        
+        .timeline-item:nth-child(even).visible {
+            transform: translateX(0);
+        }
+        
+        .timeline-content {
+            background: var(--light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .timeline-content:hover {
+            transform: scale(1.02);
+        }
+        
+        .timeline-date {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Experience */
+        .experience {
+            background-color: var(--secondary);
+        }
+        
+        .experience-tabs {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .tab-buttons {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .tab-btn {
+            background: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            margin: 0 0.5rem 0.5rem;
+            border-radius: 30px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+        
+        .tab-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .tab-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .tab-panel {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .tab-panel.active {
+            display: block;
+        }
+        
+        .job-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.5s ease;
+        }
+        
+        .job-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .job-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .job-title {
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 0.3rem;
+        }
+        
+        .job-company {
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+        }
+        
+        .job-date {
+            font-size: 0.9rem;
+            color: #777;
+        }
+        
+        /* Contact */
+        .contact {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .contact h2 {
+            color: white;
+        }
+        
+        .contact h2:after {
+            background: var(--secondary);
+        }
+        
+        .contact-info {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .contact-detail {
+            margin-bottom: 1.5rem;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background: var(--secondary);
+            color: var(--dark);
+            transform: translateY(-3px);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .nav-toggle {
+                display: block;
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+            }
+            
+            nav {
+                width: 100%;
+                margin-top: 1rem;
+                display: none;
+            }
+            
+            nav.active {
+                display: block;
+            }
+            
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav li {
+                margin: 0.5rem 0;
+            }
+            
+            .hero {
+                padding: 8rem 0 4rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .timeline:before {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-right: 0;
+                padding-left: 70px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                margin-left: 0;
+                padding-left: 70px;
+            }
+            
+            .tab-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .tab-btn {
+                width: 80%;
+                margin-bottom: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">Thoko Kandodo</div>
+            <button class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#impact">Impact</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#focus">Focus Areas</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Thoko Kandodo</h1>
+            <p>Entrepreneur | Strategist | Coach | International Speaker & Preacher</p>
+            <p>I am passionate about transformation and dedicated to empowering Executives, Entrepreneurs, and Leaders to grow in impact, leadership, business, and wealth.</p>
+            <div class="tagline">Awarded by The Wealth Magazine among the Top 100 Inspiring Women in Malawi (2025)</div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>It's a pleasure to meet you, and I'd like to share a little about myself.</p>
+                    <p>I never set out to be a coach. My intention was to simply help and transform people and businesses. Over time, CEOs, directors, and leaders began reaching out saying, "Coach, I need your help with something." What I thought were casual conversations turned into coaching moments—shaping careers, unlocking ideas, and opening new perspectives.</p>
+                    <p>I've since embraced this as God's calling on my life. I don't often call myself a coach; rather, I see myself as a strategic thinking partner—a trusted sounding board for leaders and individuals who want to achieve more in life, career, and business.</p>
+                    <p>Beyond my professional work, I am a wife, a mother, a teacher, a friend, and a leader with a deep passion for change, growth, and lasting success.</p>
+                    <p>I look forward to meeting you and being part of your journey — because I believe that together, we can achieve more.</p>
+                </div>
+                <div class="about-image">
+                    <!-- Placeholder for image -->
+                    <div style="height: 400px; background: var(--secondary); display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-user" style="font-size: 5rem; color: var(--primary);"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section id="impact" class="impact">
+        <div class="container">
+            <h2>Impact Over The Years</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">+484</div>
+                    <div class="stat-desc">Executives, Directors, Entrepreneurs and Leaders Coached and Supported</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">+87.1%</div>
+                    <div class="stat-desc">Compounded Annual Profit Growth rate over 7 years</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">+720</div>
+                    <div class="stat-desc">People reached in +20 branches under Organizational Purpose and Strategy Cascade</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">+31</div>
+                    <div class="stat-desc">Public Speaking Engagements at international and local conferences</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">+650</div>
+                    <div class="stat-desc">Junior Leaders Mentored, and more than 8 conferences held for youth</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">+15</div>
+                    <div class="stat-desc">Organizations Coached and led team facilitations</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2>My Offer To You</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <h3>Personal Coaching</h3>
+                    <p>One-on-one conversations in life, profession or business. Mostly virtual unless pre-arranged for an in-person meeting.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Business Coaching</h3>
+                    <p>For executives, entrepreneurs, business or ministry leaders focused on organizational growth.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Group Coaching</h3>
+                    <p>For teams at executive and managerial level or groups of peers who would like professional facilitation.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                    <h3>Speaking Engagements</h3>
+                    <p>I speak at events with thousands of attendees, or smaller events with hundreds or fewer attendees.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Ideas & Thinking Sessions</h3>
+                    <p>Brainstorming sessions where we bounce off ideas and think strategically.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>Mentorship</h3>
+                    <p>Growing junior leaders to identify their God-given leadership potential and creating a platform for learning.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Focus Areas -->
+    <section id="focus" class="focus">
+        <div class="container">
+            <h2>My Areas of Focus</h2>
+            <div class="focus-grid">
+                <div class="focus-item">
+                    <div class="focus-icon">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                    <div>Personal, Team, and Organizational Leadership</div>
+                </div>
+                <div class="focus-item">
+                    <div class="focus-icon">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                    <div>Strategic Planning, Monitoring and/or Review</div>
+                </div>
+                <div class="focus-item">
+                    <div class="focus-icon">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                    <div>Public Speaking and Presentations</div>
+                </div>
+                <div class="focus-item">
+                    <div class="focus-icon">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                    <div>Research and conversations on global and local trends</div>
+                </div>
+                <div class="focus-item">
+                    <div class="focus-icon">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                    <div>Business Startup, Growth or Turnaround</div>
+                </div>
+                <div class="focus-item">
+                    <div class="focus-icon">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                    <div>Finance and Wealth Management</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications -->
+    <section id="certifications" class="certifications">
+        <div class="container">
+            <h2>Professional Certifications</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Aug 2022 - Apr 2025</div>
+                        <h3>Certified Strategic Coach</h3>
+                        <p>Global Transformation Institute - South Africa</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Apr 2020 - Mar 2022</div>
+                        <h3>Chartered Banker and MBA</h3>
+                        <p>University of Bangor – Wales</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Nov - Dec 2015</div>
+                        <h3>Foundations In Retail Banking</h3>
+                        <p>Milpark Business School – South Africa</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Jan - Dec 2014</div>
+                        <h3>Certificate in Leadership and Ministry</h3>
+                        <p>Pentecost International Christian Centre (PICC) Hope School of Ministry - Malawi</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Jun 2009 - Dec 2010</div>
+                        <h3>Chartered Accountant</h3>
+                        <p>ACCA - United Kingdom</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Oct 2003 - Dec 2007</div>
+                        <h3>Bachelor of Accountancy Degree</h3>
+                        <p>University of Malawi - The Polytechnic</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2>Work Experience</h2>
+            <div class="experience-tabs">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-tab="current">Current Roles</button>
+                    <button class="tab-btn" data-tab="banking">Banking Experience</button>
+                    <button class="tab-btn" data-tab="earlier">Earlier Career</button>
+                    <button class="tab-btn" data-tab="ministry">Ministry Work</button>
+                </div>
+                <div class="tab-content">
+                    <div class="tab-panel active" id="current-tab">
+                        <div class="job-item">
+                            <div class="job-title">Founder and CEO</div>
+                            <div class="job-company">VA2 NETWORK</div>
+                            <div class="job-date">January 2025 - Current</div>
+                        </div>
+                        <div class="job-item">
+                            <div class="job-title">Founder and CEO</div>
+                            <div class="job-company">CHRISSIE ROOSWORTH CONSULTANTS</div>
+                            <div class="job-date">June 2023 – current</div>
+                        </div>
+                    </div>
+                    <div class="tab-panel" id="banking-tab">
+                        <div class="job-item">
+                            <div class="job-title">Executive Assistant To The CEO</div>
+                            <div class="job-company">NBS BANK</div>
+                            <div class="job-date">June 2017 – Dec 2025</div>
+                        </div>
+                        <div class="job-item">
+                            <div class="job-title">Customer Relationship Lead – Core Banking System Change Project</div>
+                            <div class="job-company">STANDARD BANK</div>
+                            <div class="job-date">April 2016 – April 2017</div>
+                        </div>
+                        <div class="job-item">
+                            <div class="job-title">Business Manager For The CEO</div>
+                            <div class="job-company">STANDARD BANK</div>
+                            <div class="job-date">Feb 2015 – April 2016</div>
+                        </div>
+                        <div class="job-item">
+                            <div class="job-title">Manager, Financial Accounting and Reporting</div>
+                            <div class="job-company">STANDARD BANK</div>
+                            <div class="job-date">May 2012 – Feb 2015</div>
+                        </div>
+                    </div>
+                    <div class="tab-panel" id="earlier-tab">
+                        <div class="job-item">
+                            <div class="job-title">Founder and Part-Time CEO</div>
+                            <div class="job-company">PEARLS AND ROSES – EVENT MANAGEMENT & DECOR</div>
+                            <div class="job-date">Jan 2011 to Dec 2019</div>
+                        </div>
+                        <div class="job-item">
+                            <div class="job-title">Financial Planning Analyst</div>
+                            <div class="job-company">JTI LEAF LTD</div>
+                            <div class="job-date">May 2011 TO April 2012</div>
+                        </div>
+                        <div class="job-item">
+                            <div class="job-title">External Auditor</div>
+                            <div class="job-company">DELOITTE - MALAWI</div>
+                            <div class="job-date">JAN 2008 – MAY 2011</div>
+                        </div>
+                        <div class="job-item">
+                            <div class="job-title">Auditor</div>
+                            <div class="job-company">PETERHOLDSWORTH & COMPANY</div>
+                            <div class="job-date">Jan 2007 - Dec 2007</div>
+                        </div>
+                    </div>
+                    <div class="tab-panel" id="ministry-tab">
+                        <div class="job-item">
+                            <div class="job-title">Women's Ministry – Counselor</div>
+                            <div class="job-company">PICC CHURCH (Malawi)</div>
+                            <div class="job-date">2025</div>
+                        </div>
+                        <div class="job-item">
+                            <div class="job-title">Deputy Head of The Children's Church</div>
+                            <div class="job-company">PICC CHURCH (Malawi)</div>
+                            <div class="job-date">2023 to 2025</div>
+                        </div>
+                        <div class="job-item">
+                            <div class="job-title">Deputy Head of The Prayer Department</div>
+                            <div class="job-company">PICC CHURCH (Malawi)</div>
+                            <div class="job-date">2015 to 2017</div>
+                        </div>
+                        <div class="job-item">
+                            <div class="job-title">Offerings, Accounting and recording</div>
+                            <div class="job-company">ASSEMBLIES OF GOD AREA 18B BRANCH</div>
+                            <div class="job-date">2010 – 2011</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <div class="contact-info">
+                <div class="contact-detail">
+                    <p>I look forward to connecting with you and being part of your journey to greater impact and success.</p>
+                </div>
+                <div class="contact-detail">
+                    <p><i class="fas fa-envelope"></i> Email: info@thokokandodo.com</p>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Thoko Kandodo. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        document.getElementById('navToggle').addEventListener('click', function() {
+            document.getElementById('mainNav').classList.toggle('active');
+        });
+
+        // Tab Functionality
+        const tabButtons = document.querySelectorAll('.tab-btn');
+        const tabPanels = document.querySelectorAll('.tab-panel');
+        
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons and panels
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabPanels.forEach(panel => panel.classList.remove('active'));
+                
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                // Show corresponding panel
+                const tabId = button.getAttribute('data-tab');
+                document.getElementById(`${tabId}-tab`).classList.add('active');
+                
+                // Animate job items when tab changes
+                setTimeout(() => {
+                    animateJobItems();
+                }, 300);
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetSection.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                if (window.innerWidth <= 768) {
+                    document.getElementById('mainNav').classList.remove('active');
+                }
+            });
+        });
+
+        // Scroll Animation
+        function checkVisibility() {
+            const sections = document.querySelectorAll('section');
+            const statCards = document.querySelectorAll('.stat-card');
+            const serviceCards = document.querySelectorAll('.service-card');
+            const focusItems = document.querySelectorAll('.focus-item');
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (sectionTop < windowHeight * 0.85) {
+                    section.classList.add('visible');
+                }
+            });
+            
+            statCards.forEach((card, index) => {
+                const cardTop = card.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (cardTop < windowHeight * 0.85) {
+                    setTimeout(() => {
+                        card.classList.add('visible');
+                    }, index * 100);
+                }
+            });
+            
+            serviceCards.forEach((card, index) => {
+                const cardTop = card.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (cardTop < windowHeight * 0.85) {
+                    setTimeout(() => {
+                        card.classList.add('visible');
+                    }, index * 100);
+                }
+            });
+            
+            focusItems.forEach((item, index) => {
+                const itemTop = item.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (itemTop < windowHeight * 0.85) {
+                    setTimeout(() => {
+                        item.classList.add('visible');
+                    }, index * 100);
+                }
+            });
+            
+            timelineItems.forEach((item, index) => {
+                const itemTop = item.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (itemTop < windowHeight * 0.85) {
+                    setTimeout(() => {
+                        item.classList.add('visible');
+                    }, index * 150);
+                }
+            });
+            
+            animateJobItems();
+        }
+        
+        function animateJobItems() {
+            const jobItems = document.querySelectorAll('.job-item');
+            
+            jobItems.forEach((item, index) => {
+                const itemTop = item.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (itemTop < windowHeight * 0.85) {
+                    setTimeout(() => {
+                        item.classList.add('visible');
+                    }, index * 100);
+                }
+            });
+        }
+        
+        // Initial check on page load
+        window.addEventListener('load', checkVisibility);
+        
+        // Check on scroll
+        window.addEventListener('scroll', checkVisibility);
+    </script>
+</body>
+</html>
