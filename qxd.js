@@ -1,5 +1,5 @@
-// Mobile Navigation Toggle
-document.getElementById('navToggle').addEventListener('click', function() {
+ // Mobile Navigation Toggle
+ document.getElementById('navToggle').addEventListener('click', function() {
     document.getElementById('mainNav').classList.toggle('active');
 });
 
@@ -80,6 +80,7 @@ function checkVisibility() {
     const timelineItems = document.querySelectorAll('.timeline-item');
     const testimonialCards = document.querySelectorAll('.testimonial-card');
     
+    // Animate sections
     sections.forEach(section => {
         const sectionTop = section.getBoundingClientRect().top;
         const windowHeight = window.innerHeight;
@@ -89,6 +90,7 @@ function checkVisibility() {
         }
     });
     
+    // Animate stat cards with counters
     statCards.forEach((card, index) => {
         const cardTop = card.getBoundingClientRect().top;
         const windowHeight = window.innerHeight;
@@ -107,6 +109,7 @@ function checkVisibility() {
         }
     });
     
+    // Animate service cards
     serviceCards.forEach((card, index) => {
         const cardTop = card.getBoundingClientRect().top;
         const windowHeight = window.innerHeight;
@@ -118,6 +121,7 @@ function checkVisibility() {
         }
     });
     
+    // Animate focus items
     focusItems.forEach((item, index) => {
         const itemTop = item.getBoundingClientRect().top;
         const windowHeight = window.innerHeight;
@@ -129,6 +133,7 @@ function checkVisibility() {
         }
     });
     
+    // Animate timeline items
     timelineItems.forEach((item, index) => {
         const itemTop = item.getBoundingClientRect().top;
         const windowHeight = window.innerHeight;
@@ -140,6 +145,7 @@ function checkVisibility() {
         }
     });
     
+    // Animate testimonial cards
     testimonialCards.forEach((card, index) => {
         const cardTop = card.getBoundingClientRect().top;
         const windowHeight = window.innerHeight;
@@ -151,6 +157,7 @@ function checkVisibility() {
         }
     });
     
+    // Animate job items
     animateJobItems();
 }
 
@@ -169,8 +176,32 @@ function animateJobItems() {
     });
 }
 
-// Initial check on page load
-window.addEventListener('load', checkVisibility);
+// Handle responsive behavior
+function handleResize() {
+    const nav = document.getElementById('mainNav');
+    if (window.innerWidth > 768) {
+        nav.style.display = 'block';
+    } else {
+        nav.style.display = 'none';
+    }
+}
 
-// Check on scroll
-window.addEventListener('scroll', checkVisibility);
+// Initialize all functionality
+function init() {
+    // Initial check on page load
+    window.addEventListener('load', () => {
+        checkVisibility();
+    });
+    
+    // Check on scroll
+    window.addEventListener('scroll', checkVisibility);
+    
+    // Handle window resize
+    window.addEventListener('resize', handleResize);
+    
+    // Initial resize check
+    handleResize();
+}
+
+// Start the application
+init();
