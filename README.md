@@ -1,1 +1,1 @@
-# thoko-kandodo
+# Thoko Kandodo
