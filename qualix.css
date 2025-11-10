@@ -72,7 +72,7 @@ section.visible {
 
 /* Header & Navigation */
 header {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+    background: rgb(183, 43, 57);
     color: white;
     padding: 1rem 0;
     position: fixed;
@@ -558,14 +558,26 @@ nav a:hover:after {
 }
 
 .testimonial-card:before {
-    content: '"';
+    content: '“';
     position: absolute;
-    top: 20px;
+    top: 14px;
     left: 25px;
     font-size: 4rem;
     color: var(--primary);
     opacity: 0.2;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Imperial Script', serif;
+    line-height: 1;
+}
+
+.testimonial-card:after {
+    content: '”';
+    position: absolute;
+    bottom: 70px;
+    right: 65px;
+    font-size: 4rem;
+    color: var(--primary);
+    opacity: 0.2;
+    font-family: 'Imperial Script', serif;
     line-height: 1;
 }
 
