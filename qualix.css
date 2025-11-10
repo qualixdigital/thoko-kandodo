@@ -203,8 +203,9 @@ nav a:hover:after {
 
 .about-content {
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     gap: 3rem;
+    align-items: stretch;
 }
 
 .about-text {
@@ -213,6 +214,7 @@ nav a:hover:after {
 }
 
 .about-image {
+    flex-grow: 1;
     flex: 1;
     border-radius: 10px;
     overflow: hidden;
@@ -586,6 +588,7 @@ nav a:hover:after {
     margin-bottom: 1.5rem;
     position: relative;
     z-index: 1;
+    min-height: 8rem;
 }
 
 .testimonial-author {
@@ -673,8 +676,12 @@ footer {
     background: var(--dark);
     color: white;
     text-align: center;
-    padding: 2rem 0;
+    padding: 1rem 0;
     font-size: 0.9rem;
+}
+
+.text-white {
+    color: #FFF9FB;
 }
 
 /* Responsive Design */
