@@ -63,10 +63,12 @@ function animateCounter(element) {
         }
         
         // Format the number with commas for thousands
-        if (Number.isInteger(target)) {
-            element.textContent = '+' + Math.floor(current).toLocaleString();
+        if (Math.floor(current) == 87) {
+            element.textContent = Math.floor(current).toLocaleString() + '% +';
+        } else if(Number.isInteger(target)){
+            element.textContent = Math.floor(current).toLocaleString() + '+';
         } else {
-            element.textContent = '+' + current.toFixed(1) + '%';
+            element.textContent = '+' + current.toFixed(1) + '% +';
         }
     }, 16);
 }
