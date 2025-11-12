@@ -241,7 +241,7 @@ nav a:hover:after {
 
 .stats-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
 }
 
@@ -319,6 +319,10 @@ nav a:hover:after {
 /* Focus Areas */
 .focus {
     background-color: var(--secondary);
+}
+
+.focus .sub {
+    text-align: center;
 }
 
 .focus-grid {
@@ -434,7 +438,7 @@ nav a:hover:after {
 }
 
 .experience-tabs {
-    max-width: 800px;
+    max-width: 835px;
     margin: 0 auto;
 }
 
@@ -521,13 +525,14 @@ nav a:hover:after {
     background-color: white;
 }
 
-.testimonials-intro {
+.testimonials-intro, 
+.focus .sub {
     text-align: center;
     max-width: 700px;
     margin: 0 auto 3rem;
 }
 
-.testimonials-intro p {
+.testimonials-intro p, .focus .sub {
     font-size: 1.1rem;
     color: #666;
 }
